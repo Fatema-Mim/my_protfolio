@@ -13,7 +13,6 @@ function App() {
   return (
     <div className='font-serif'>
       <BrowserRouter>
-
         <Routes>
           <Route path="/" element={<Banner />} />
           <Route path="/about" element={<About />} />

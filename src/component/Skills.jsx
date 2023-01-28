@@ -68,15 +68,6 @@ const Skills = () => {
                                 <div class="bg-blue-600 h-2.5 rounded-full" style={{ width: `${80}%` }}></div>
                             </div>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-color3 dark:text-white">Node</span>
-                                <span class="text-sm font-medium text-color3 dark:text-white">70%</span>
-                            </div>
-                            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
-                                <div class="bg-blue-600 h-2.5 rounded-full" style={{ width: `${70}%` }}></div>
-                            </div>
-                        </div>
                     </div>
                </div>
            </div>
