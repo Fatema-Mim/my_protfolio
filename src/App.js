@@ -1,27 +1,19 @@
-import './App.css';
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
-import About from './component/About';
-import Banner from './component/Banner';
-import Project from './component/Project';
-import Skills from './component/Skills';
-import Contact from './component/Contact';
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import Skills from "./components/Skills";
+import Work from "./components/Work";
+
 function App() {
   return (
     <div className='font-serif'>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Banner />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
-
-        </Routes>
-      </BrowserRouter>
+      <Navbar/>
+      <Home/>
+      <About/>
+      <Skills/>
+      <Work/>
+      <Contact/>
     </div>
     
   );
