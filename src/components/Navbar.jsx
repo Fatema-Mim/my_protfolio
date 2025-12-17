@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  FaBars,
-  FaTimes,
-  FaGithub,
-  FaLinkedin
-} from 'react-icons/fa';
-import { HiOutlineMail } from 'react-icons/hi';
-import { BsFillPersonLinesFill } from 'react-icons/bs';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 
 const Navbar = () => {
@@ -14,43 +7,48 @@ const Navbar = () => {
   const handleClick = () => setNav(!nav);
 
   return (
-    <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300'>
+    <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f]/95 backdrop-blur-sm text-gray-300 z-50 border-b border-cyan-500/10'>
       <div>
-        <p className='text-pink-600 text-5xl'>Mim</p>
+        <p className='text-5xl font-bold text-transparent text-cyan-500 bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text'>Mim</p>
       </div>
 
       {/* menu */}
-      <ul className='hidden md:flex '>
-        <li>
-          <Link to='home' smooth={true} duration={500}>
+      <ul className='hidden gap-2 md:flex'>
+        <li className='transition-colors duration-300 hover:text-cyan-500'>
+          <Link to='home' smooth={true} duration={500} className='px-4 py-2 rounded-lg hover:bg-cyan-500/10'>
             Home
           </Link>
         </li>
-        <li>
-          <Link to='about' smooth={true} duration={500}>
+        <li className='transition-colors duration-300 hover:text-cyan-500'>
+          <Link to='about' smooth={true} duration={500} className='px-4 py-2 rounded-lg hover:bg-cyan-500/10'>
             About
           </Link>
         </li>
-        <li>
-          <Link to='skills' smooth={true} duration={500}>
+        <li className='transition-colors duration-300 hover:text-cyan-500'>
+          <Link to='skills' smooth={true} duration={500} className='px-4 py-2 rounded-lg hover:bg-cyan-500/10'>
             Skills
           </Link>
         </li>
-        <li>
-          <Link to='work' smooth={true} duration={500}>
+        <li className='transition-colors duration-300 hover:text-cyan-500'>
+          <Link to='experience' smooth={true} duration={500} className='px-4 py-2 rounded-lg hover:bg-cyan-500/10'>
+            Experience
+          </Link>
+        </li>
+        <li className='transition-colors duration-300 hover:text-cyan-500'>
+          <Link to='work' smooth={true} duration={500} className='px-4 py-2 rounded-lg hover:bg-cyan-500/10'>
             Work
           </Link>
         </li>
-        <li>
-          <Link to='contact' smooth={true} duration={500}>
+        <li className='transition-colors duration-300 hover:text-cyan-500'>
+          <Link to='contact' smooth={true} duration={500} className='px-4 py-2 rounded-lg hover:bg-cyan-500/10'>
             Contact
           </Link>
         </li>
       </ul>
 
       {/* Hamburger */}
-      <div onClick={handleClick} className='md:hidden z-10'>
-        {!nav ? <FaBars /> : <FaTimes />}
+      <div onClick={handleClick} className='z-10 transition-colors cursor-pointer md:hidden hover:text-cyan-500'>
+        {!nav ? <FaBars size={24} /> : <FaTimes size={24} />}
       </div>
 
       {/* Mobile menu */}
@@ -58,7 +56,7 @@ const Navbar = () => {
         className={
           !nav
             ? 'hidden'
-            : 'absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center'
+            : 'absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-[#0a192f] to-[#112240] flex flex-col justify-center items-center backdrop-blur-sm'
         }
       >
         <li className='py-6 text-4xl'>
@@ -80,6 +78,12 @@ const Navbar = () => {
         </li>
         <li className='py-6 text-4xl'>
           {' '}
+          <Link onClick={handleClick} to='experience' smooth={true} duration={500}>
+            Experience
+          </Link>
+        </li>
+        <li className='py-6 text-4xl'>
+          {' '}
           <Link onClick={handleClick} to='work' smooth={true} duration={500}>
             Work
           </Link>
@@ -91,48 +95,6 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-
-      {/* Social icons */}
-      <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
-        <ul>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
-            <a
-              className='flex justify-between items-center w-full text-gray-300'
-              href='https://www.linkedin.com/in/fatema-tuz-zohura-mim/'
-              target="_blank"
-            >
-              Linkedin <FaLinkedin size={30} />
-            </a>
-          </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333333]'>
-            <a
-              className='flex justify-between items-center w-full text-gray-300'
-              href='https://github.com/Fatema-Mim'
-              target="_blank"
-            >
-              Github <FaGithub size={30} />
-            </a>
-          </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]'>
-            <a
-              className='flex justify-between items-center w-full text-gray-300'
-              href='mailto:fatemamim28@gmail.com'
-              target="_blank"
-            >
-              Email <HiOutlineMail size={30} />
-            </a>
-          </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]'>
-            <a
-              className='flex justify-between items-center w-full text-gray-300'
-              href='https://drive.google.com/file/d/1JsWn7GwcBfd-bSRoo2zLJ_hpJaaEj_-4/view?usp=share_link'
-              target="_blank"
-            >
-              Resume <BsFillPersonLinesFill size={30} />
-            </a>
-          </li>
-        </ul>
-      </div>
     </div>
   );
 };

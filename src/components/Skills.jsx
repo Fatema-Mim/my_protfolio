@@ -12,57 +12,88 @@ import Mongo from '../assets/mongo.png';
 import Redux from '../assets/redux.png';
 
 const Skills = () => {
+  const comfortableSkills = [
+    { name: 'HTML5', img: HTML },
+    { name: 'CSS3', img: CSS },
+    { name: 'Tailwind', img: Tailwind },
+  ];
+
+  const familiarSkills = [
+    { name: 'JavaScript', img: JavaScript },
+    { name: 'React', img: ReactImg },
+    { name: 'Redux', img: Redux },
+    { name: 'Node.js', img: Node },
+    { name: 'MongoDB', img: Mongo },
+    { name: 'Firebase', img: FireBase },
+  ];
+
+  const tools = [
+    { name: 'GitHub', img: GitHub },
+  ];
+
+  const SkillCard = ({ skill }) => (
+    <div className='group bg-gradient-to-br from-[#112240] to-[#0a192f] p-6 rounded-xl border border-cyan-500/20 hover:border-cyan-500/60 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 transform hover:-translate-y-1'>
+      <div className='flex flex-col items-center'>
+        <div className='w-20 h-20 mb-4 flex items-center justify-center bg-white/5 rounded-lg group-hover:bg-white/10 transition-all'>
+          <img className='w-16 h-16 object-contain' src={skill.img} alt={`${skill.name} icon`} />
+        </div>
+        <p className='text-gray-300 font-medium group-hover:text-cyan-500 transition-colors'>{skill.name}</p>
+      </div>
+    </div>
+  );
+
   return (
-    <div name='skills' className='w-full md:h-screen bg-[#0a192f] text-gray-300 pb-28 md:pb-0'>
-      {/* Container */}
-      <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-          <div>
-              <p className='text-4xl font-bold inline border-b-4 border-pink-600 '>Skills</p>
-              <p className='py-4'> These are the technologies I've worked with</p>
+    <div name='skills' className='w-full md:min-h-screen bg-gradient-to-b from-[#112240] to-[#0a192f] text-gray-300 py-28'>
+      <div className='max-w-[1000px] mx-auto px-8'>
+        <div className='mb-20 text-center animate-bounce-in'>
+          <p className='inline text-4xl font-bold border-b-4 border-cyan-500 text-gray-300'>
+            Skills
+          </p>
+        </div>
+
+        <div className='space-y-12'>
+          {/* Comfortable */}
+          <div className='animate-slide-in-left delay-200'>
+            <h3 className='text-2xl font-bold text-cyan-500 mb-6 flex items-center'>
+              <span className='w-2 h-8 bg-cyan-500 mr-3 rounded animate-glow-pulse'></span>
+              Comfortable
+            </h3>
+            <p className='text-gray-400 mb-4 text-sm'>HTML5, CSS3, Bootstrap, SASS, Tailwind CSS, Chakra UI, MUI, Shadcn/UI</p>
+            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4'>
+              {comfortableSkills.map((skill, index) => (
+                <SkillCard key={index} skill={skill} />
+              ))}
+            </div>
           </div>
 
-          <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center py-8'>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={HTML} alt="HTML icon" />
-                  <p className='my-4'>HTML</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={CSS} alt="HTML icon" />
-                  <p className='my-4'>CSS</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={JavaScript} alt="HTML icon" />
-                  <p className='my-4'>JAVASCRIPT</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={ReactImg} alt="HTML icon" />
-                  <p className='my-4'>REACT</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={GitHub} alt="HTML icon" />
-                  <p className='my-4'>GITHUB</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={Node} alt="HTML icon" />
-                  <p className='my-4'>NODE JS</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={Mongo} alt="HTML icon" />
-                  <p className='my-4'>MONGO DB</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={Tailwind} alt="HTML icon" />
-                  <p className='my-4'>TAILWIND</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={FireBase} alt="HTML icon" />
-                  <p className='my-4'>FIREBASE</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                  <img className='w-20 mx-auto' src={Redux} alt="HTML icon" />
-                  <p className='my-4'>REDUX</p>
-              </div>
+          {/* Familiar */}
+          <div className='animate-slide-in-right delay-400'>
+            <h3 className='text-2xl font-bold text-cyan-500 mb-6 flex items-center'>
+              <span className='w-2 h-8 bg-cyan-500 mr-3 rounded animate-glow-pulse'></span>
+              Familiar
+            </h3>
+            <p className='text-gray-400 mb-4 text-sm'>JavaScript, ES6, React, React Router, Redux, Next.js, Firebase, Node.js, MongoDB, Express.js, TypeScript</p>
+            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4'>
+              {familiarSkills.map((skill, index) => (
+                <SkillCard key={index} skill={skill} />
+              ))}
+            </div>
           </div>
+
+          {/* Tools */}
+          <div className='animate-slide-in-left delay-700'>
+            <h3 className='text-2xl font-bold text-cyan-500 mb-6 flex items-center'>
+              <span className='w-2 h-8 bg-cyan-500 mr-3 rounded animate-glow-pulse'></span>
+              Tools
+            </h3>
+            <p className='text-gray-400 mb-4 text-sm'>Git, Netlify, Figma, Jira, Vercel</p>
+            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4'>
+              {tools.map((skill, index) => (
+                <SkillCard key={index} skill={skill} />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

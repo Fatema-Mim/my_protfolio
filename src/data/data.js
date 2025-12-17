@@ -2,6 +2,7 @@ import exahike2 from '../Image/exahike2.png';
 import molecule from '../Image/molecule.png';
 import expenses from '../Image/expenses.png';
 import travel from '../Image/travel.png';
+import product from '../Image/product.png';
 
 export const data = [
   {
@@ -27,5 +28,11 @@ export const data = [
     image: travel,
     github: "https://github.com/Fatema-Mim/travel",
     live: "https://travel-agency-2.netlify.app/",
+  },
+  {
+    id: 7,
+    image: product,
+    github: "https://github.com/Fatema-Mim/real-product-managment-FE",
+    live: "https://real-prduct-managment-fe.vercel.app/login",
   }
 ];
